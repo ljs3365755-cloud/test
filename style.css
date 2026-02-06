@@ -1,0 +1,26 @@
+body {
+    background-color: #f0f8ff;
+    font-family: 'Arial', sans-serif;
+    /* 화면 전체를 중앙 정렬하는 설정 */
+    display: flex;
+    flex-direction: column; /* 위에서 아래로 쌓이게 */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center; /* 모든 글자를 중앙으로! */
+}
+
+h1 {
+    color: #0047ab;
+    font-weight: bold; /* 이미 기본적으로 굵지만, 더 확실하게 볼드체! */
+    border-bottom: 2px solid #0047ab;
+    padding-bottom: 10px;
+}
+
+img {
+    width: 200px; /* 이미지를 작게 조절 (원하는 크기로 숫자를 바꿔보세요) */
+    height: auto;
+    border-radius: 15px; /* 강아지 사진 모서리를 살짝 둥글게 하면 더 귀여워요 */
+    margin: 20px 0; /* 위아래 간격을 살짝 줌 */
+}
