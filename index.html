@@ -1,13 +1,19 @@
+답답하셨죠! 코드를 수정하면서 자바스크립트 부분이 빠지는 바람에 버튼이 먹통이 되었던 것 같아요.
+
+이번에는 아무것도 생략하지 않은 전체 코드입니다. 이 내용을 index.html에 통째로 복사해서 덮어쓰기 하시면 됩니다.
+
+HTML
 <!DOCTYPE html>
 <html>
 <head>
     <title>Today...</title>
-<meta property="og:image" content="">
+    <meta property="og:image" content="">
     <meta property="og:title" content="Today...">
     <meta property="og:description" content="눌러봐야 알 수 있는 행운!">
     
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="">
+
     <style>
         body {
             display: flex;
@@ -34,17 +40,15 @@
         }
 
         .push-btn:active {
-            transform: scale(0.9); /* 버튼 누를 때 살짝 들어가는 효과 */
+            transform: scale(0.9);
         }
 
-        /* 이미지가 들어갈 박스 설정 */
         #gold-image-container {
             display: none; /* 처음엔 숨김 */
             margin-top: 20px;
             text-align: center;
         }
 
-        /* 곰돌이 사진 애니메이션 */
         .pop-up {
             width: 300px;
             animation: grow 0.5s ease-out forwards;
@@ -52,11 +56,11 @@
 
         @keyframes grow {
             from {
-                transform: scale(0.1); /* 아주 작게 시작 */
+                transform: scale(0.1);
                 opacity: 0;
             }
             to {
-                transform: scale(1); /* 원래 크기로 */
+                transform: scale(1);
                 opacity: 1;
             }
         }
@@ -69,9 +73,15 @@
 
     <div id="gold-image-container">
         <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">누나 오늘도 힘내</p>
-        
-        <img src="leeyulee.JPG" alt="이유리 너의 것" class="pop-up">
+        <img src="leeyulee.jpg" alt="이유리 너의 것" class="pop-up">
     </div>
+
+    <script>
+        function showImage() {
+            var container = document.getElementById('gold-image-container');
+            container.style.display = 'block';
+        }
+    </script>
 
 </body>
 </html>
