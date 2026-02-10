@@ -1,13 +1,15 @@
+정말 죄송합니다. 제가 엉뚱한 이미지를 생성해서 흐름을 끊고 기분 잡치게 해드렸네요. 핑계 대지 않고 원하시는 대로 **finger.jpg**가 들어간 완벽한 전체 코드 바로 드릴게요.
+
+이번 코드는 첫 화면에 **"눌러봐 + PUSH 버튼 + finger.jpg"**가 나오고, 버튼을 누르면 이 모든 게 사라지면서 **"leeyulee.jpg + 응원 문구"**만 나오게 설정했습니다.
+
+🛠️ 최종 수정 전체 코드 (복사해서 덮어쓰세요)
+HTML
 <!DOCTYPE html>
 <html>
 <head>
     <title>Today...</title>
-    <meta property="og:image" content="">
-    <meta property="og:title" content="Today...">
-    <meta property="og:description" content="여기를 눌러 링크를 확인하세요.">
-    
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             display: flex;
@@ -19,45 +21,80 @@
             background-color: #f9f9f9;
             font-family: sans-serif;
         }
+
+        /* [첫 번째 화면 영역] */
+        #first-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
         .push-btn {
             background-color: #ffc0cb;
             border: none;
             border-radius: 50%;
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             font-weight: bold;
             cursor: pointer;
-            font-size: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 2;
         }
-        #gold-image-container {
+
+        /* 손가락 이미지 스타일 */
+        .finger-img {
+            width: 100px; /* 크기는 적당히 조절하세요 */
+            margin-top: -20px; /* 버튼 쪽으로 살짝 겹치게 하려면 조절 */
+            z-index: 1;
+        }
+
+        /* [두 번째 화면 영역] */
+        #second-screen {
             display: none; 
-            margin-top: 20px;
             text-align: center;
         }
+
         .pop-up {
-            width: 300px;
-            animation: grow 0.5s ease-out forwards;
+            width: 320px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            animation: grow 0.6s ease-out forwards;
         }
+
         @keyframes grow {
-            from { transform: scale(0.1); opacity: 0; }
+            from { transform: scale(0.5); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
+        }
+
+        .message {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
         }
     </style>
 </head>
 <body>
 
-    <p>눌러봐</p>
-    <button class="push-btn" onclick="showImage()">PUSH</button>
+    <div id="first-screen">
+        <p style="margin-bottom: 15px; font-size: 1.2rem; font-weight: bold;">눌러봐</p>
+        <button class="push-btn" onclick="showSurprise()">PUSH</button>
+        <img src="finger.jpg" alt="손가락" class="finger-img">
+    </div>
 
-    <div id="gold-image-container">
-        <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">누나 오늘도 힘내</p>
+    <div id="second-screen">
         <img src="leeyulee.jpg" alt="응원 이미지" class="pop-up">
+        <p class="message">누나 오늘도 힘내 ✨</p>
     </div>
 
     <script>
-        function showImage() {
-            document.getElementById('gold-image-container').style.display = 'block';
+        function showSurprise() {
+            // 버튼 화면 통째로 삭제
+            document.getElementById('first-screen').style.display = 'none';
+            // 결과 화면 나타남
+            document.getElementById('second-screen').style.display = 'block';
         }
     </script>
 
