@@ -2,8 +2,6 @@
 <html>
 <head>
     <title>Today...</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             display: flex;
@@ -25,9 +23,7 @@
             cursor: pointer;
             font-size: 16px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
         }
-        .push-btn:active { transform: scale(0.9); }
         #gold-image-container {
             display: none; 
             margin-top: 20px;
@@ -55,7 +51,6 @@
 
     <script>
         function showImage() {
-            // 버튼 클릭 시 컨테이너를 보이게 함
             document.getElementById('gold-image-container').style.display = 'block';
         }
     </script>
