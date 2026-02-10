@@ -1,19 +1,9 @@
-답답하셨죠! 코드를 수정하면서 자바스크립트 부분이 빠지는 바람에 버튼이 먹통이 되었던 것 같아요.
-
-이번에는 아무것도 생략하지 않은 전체 코드입니다. 이 내용을 index.html에 통째로 복사해서 덮어쓰기 하시면 됩니다.
-
-HTML
 <!DOCTYPE html>
 <html>
 <head>
     <title>Today...</title>
-    <meta property="og:image" content="">
-    <meta property="og:title" content="Today...">
-    <meta property="og:description" content="눌러봐야 알 수 있는 행운!">
-    
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             display: flex;
@@ -25,7 +15,6 @@ HTML
             background-color: #f9f9f9;
             font-family: sans-serif;
         }
-
         .push-btn {
             background-color: #ffc0cb;
             border: none;
@@ -38,31 +27,19 @@ HTML
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.2s;
         }
-
-        .push-btn:active {
-            transform: scale(0.9);
-        }
-
+        .push-btn:active { transform: scale(0.9); }
         #gold-image-container {
-            display: none; /* 처음엔 숨김 */
+            display: none; 
             margin-top: 20px;
             text-align: center;
         }
-
         .pop-up {
             width: 300px;
             animation: grow 0.5s ease-out forwards;
         }
-
         @keyframes grow {
-            from {
-                transform: scale(0.1);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
+            from { transform: scale(0.1); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
     </style>
 </head>
@@ -73,13 +50,13 @@ HTML
 
     <div id="gold-image-container">
         <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">누나 오늘도 힘내</p>
-        <img src="leeyulee.jpg" alt="이유리 너의 것" class="pop-up">
+        <img src="leeyulee.avif" alt="응원 이미지" class="pop-up">
     </div>
 
     <script>
         function showImage() {
-            var container = document.getElementById('gold-image-container');
-            container.style.display = 'block';
+            // 버튼 클릭 시 컨테이너를 보이게 함
+            document.getElementById('gold-image-container').style.display = 'block';
         }
     </script>
 
